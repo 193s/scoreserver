@@ -1,0 +1,36 @@
+extends layout
+
+block title
+  title Login
+
+block content
+  - if (status == 'wrong') {
+  div(class='alert alert-danger' role='alert')
+    p wrong password
+  - }
+  - if (status == 'duplicate') {
+  div(class='alert alert-danger' role='alert')
+    p id is duplicate
+  - }
+  - if (status == 'success') {
+  div(class='alert alert-success' role='alert')
+    p successfully registered
+  - }
+
+  h2 Login
+  //- TODO: fix
+  form(action='/login' method='POST' class='form-group')
+    label.control-label Id
+    input(type='text'     name='id'        placeholder='Id'        class='form-control')
+    label.control-label Password
+    input(type='password' name='password'  placeholder='Password'  class='form-control')
+    input(type='submit' class='btn btn-primary' style='margin:20pt')
+
+  h2 Register
+  form(action='/register' method='POST' class='form-group')
+    //- p Team Name
+    label.control-label Id
+    input(type='text' name='id' placeholder='Id' class='form-control')
+    p Password
+    input(type='text' name='password'  placeholder='Password'  class='form-control')
+    input(type='submit' class='btn btn-primary')

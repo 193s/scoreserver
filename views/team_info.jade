@@ -1,0 +1,11 @@
+extends layout
+
+block title
+  title Teams
+
+block content
+  if exists
+    h1= name
+    p Team #{name}
+  else
+    p 404

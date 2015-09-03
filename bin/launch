@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Launch mongod
+mongod -dbpath /usr/local/var/mongodb&
+
+export PORT=$1
+echo http://localhost:$PORT
+
+`dirname $0`/www

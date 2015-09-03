@@ -1,0 +1,38 @@
+extends layout
+
+block title
+  title Challenges
+
+block content
+
+  - if (status == 'wrong') {
+  div(class='alert alert-danger' role='alert')
+    p Wrong!
+  - }
+  - if (status == 'correct') {
+  div(class='alert alert-success' role='alert')
+    p Correct!
+  - }
+  - if (status == 'already') {
+  div(class='alert alert-info' role='alert')
+    p You have already solved that challenge!
+  - }
+  h2 Challenges
+  ul
+    each p in problems
+      li
+        - if (user_data.solved_challenges.indexOf(p.id) >= 0) {
+          h3(style='color: green') [solved] #{p.title}
+        - }
+        - else {
+          h3 #{p.title}
+        - }
+        h4 #{categories[p.category]} #{p.point}
+        div!= md(p.content)
+
+        form(action='/submit/#{p.id}' method='POST' class='row')
+          div.col-xs-5
+            input(type='text' name='flag' placeholder='Flag' class='form-control')
+          div.col-xs-2
+            input(type='submit' value='Submit' class='btn btn-default')
+

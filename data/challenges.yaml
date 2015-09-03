@@ -1,0 +1,15 @@
+1:
+  title: Hello, World!
+  point: 10
+  category: 1
+  content: |+
+    Hi! Submit the flag and get 10 pts!  
+    Here's the flag: `yo_yo_yo`
+  flag: yo_yo_yo
+
+2:
+  title: re
+  point: 100
+  category: 1
+  content: Hi
+  flag: flag
