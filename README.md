@@ -1,5 +1,5 @@
 # CTF-scoreserver
-ア
+a
 
 # License
-GPLv2
+MIT
